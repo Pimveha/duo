@@ -64,18 +64,13 @@ def main():
 	data = sl.container()
 
 	with header:
-		sl.title("dagen tot (ome) DUO!")
+		dif = str(get_dif(now, next_duo))
+		dif_dagen = dif.split(" ")[0]
+		dif_uur = dif.split(" ")[2]
+		dif_uur = dif_uur.split(":")[0]
 
-	with data:
-		press = sl.button("maak berekening")
-		if press == True:
-			sl.header(f"De eerst volgende keer dat duo komt is: {next_duo}.")
-			dif = str(get_dif(now, next_duo))
-			dif_dagen = dif.split(" ")[0]
-			dif_uur = dif.split(" ")[2]
-			dif_uur = dif_uur.split(":")[0]
-
-			sl.header(f"Dat is nog {dif_dagen} dagen en ongeveer {dif_uur} uur.")
+		sl.title(f"Dat is nog {dif_dagen} dagen en ongeveer {dif_uur} uur.")
+			
 	# print("dat is nog ")
 
 main()
