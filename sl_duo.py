@@ -35,13 +35,13 @@ def next_dict(month_and_year):
 	return res
 
 def get_dif(now, next_duo):
-	year, month, day = int(now.strftime("%Y")), int(now.strftime("%m")), int(now.strftime("%d"))
-	f_date = date(year, month, day)
+	year, month, day, hour = int(now.strftime("%Y")), int(now.strftime("%m")), int(now.strftime("%d")), int(now.strftime("%H"))
+	f_date = datetime(year, month, day, hour)
 
 	# 22-2021-12
 	# print(next_duo[0:2])
-	m_year, n_month, n_day = int(next_duo[3:7]), int(next_duo[8:10]), int(next_duo[0:2])
-	l_date = date(m_year, n_month, n_day)
+	n_year, n_month, n_day = int(next_duo[3:7]), int(next_duo[8:10]), int(next_duo[0:2])
+	l_date = datetime(n_year, n_month, n_day, 10)
 	delta = l_date - f_date
 	# next_duo = next_duo.strftime("%Y-%m-%d")
 	# current_date = now.strftime("%Y-%m-%d")
@@ -69,11 +69,13 @@ def main():
 	with data:
 		press = sl.button("maak berekening")
 		if press == True:
-			sl.header(f"De eerst volgende keer dat DUO komt is: {next_duo}.")
+			sl.header(f"De eerst volgende keer dat duo komt is: {next_duo}.")
 			dif = str(get_dif(now, next_duo))
-			dif = dif.split(" ")[0]
+			dif_dagen = dif.split(" ")[0]
+			dif_uur = dif.split(" ")[2]
+			dif_uur = dif_uur.split(":")[0]
 
-			sl.header(f"Dat is nog {dif} dagen.")
+			sl.header(f"Dat is nog {dif_dagen} dagen en ongeveer {dif_uur} uur.")
 	# print("dat is nog ")
 
 main()
