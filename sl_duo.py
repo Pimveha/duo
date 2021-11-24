@@ -64,12 +64,12 @@ def main():
 	data = sl.container()
 
 	with header:
-		sl.title("dagen tot ome duo!")
+		sl.title("dagen tot ome DUO!")
 
 	with data:
 		press = sl.button("maak berekening")
 		if press == True:
-			sl.header(f"De eerst volgende keer dat duo komt is: {next_duo}.")
+			sl.header(f"De eerst volgende keer dat DUO komt is: {next_duo}.")
 			dif = str(get_dif(now, next_duo))
 			dif = dif.split(" ")[0]
 
