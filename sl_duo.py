@@ -69,7 +69,7 @@ def main():
 		dif_uur = dif.split(" ")[2]
 		dif_uur = dif_uur.split(":")[0]
 
-		sl.title(f"Dat is nog {dif_dagen} dagen en ongeveer {dif_uur} uur.")
+		sl.title(f"Nog {dif_dagen} dagen en ongeveer {dif_uur} uur.")
 			
 	# print("dat is nog ")
 
