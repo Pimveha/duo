@@ -64,7 +64,7 @@ def main():
 	data = sl.container()
 
 	with header:
-		sl.title("dagen tot ome DUO!")
+		sl.title("dagen tot (ome) DUO!")
 
 	with data:
 		press = sl.button("maak berekening")
